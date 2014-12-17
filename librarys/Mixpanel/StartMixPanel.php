@@ -24,14 +24,6 @@ class mixPanelStarter {
 				$_SESSION['origURL'] = "Direct";
 			}
 		}
-		$device = "Desktop";
-		if ($mobileDetect->isMobile()) {
-			$device = "Mobile";
-			if ($mobileDetect->isTablet()) {
-				$device = "Tablet";
-			}
-		}
-		$mixpanel->register("Device",$device);
 		$mixpanel->register("origURL",$_SESSION['origURL']);
 		$mixpanel->register("ip",$_SERVER['REMOTE_ADDR']);
 
