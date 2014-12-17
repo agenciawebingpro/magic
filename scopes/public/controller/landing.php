@@ -7,8 +7,11 @@ class ControllerLanding extends PublicController
 	
 	function index()
 	{
-		$this->html->add_js_linked("form.js",1,1);
-		$this->html->add_js_linked("validacao.js",1,1);	
+		$this->html->add_js_linked("form.js",1,1); // Chama o javascript scopes/public/views/js/form.js
+		$this->html->add_js_linked("validacao.js",1,1);	// Chama o javascript scopes/public/views/js/validacao.js
+		$this->html->add_css_linked("style.css"); // Chama o javascript scopes/public/views/js/style.css
+
+		/* Define uma série de variáveis estáticas para passar para a view pages/landing.tpl */
 		$this->data = array(
 			"titulo"=>"Precisa de uma loja virtual com a <br />cara da sua empresa?",
 			"tituloForm" => "Entre em contato",
@@ -19,8 +22,10 @@ class ControllerLanding extends PublicController
 			"qtnDepoimentos" => 1,
 			"depoimentos" => array()
 		);
-		
+		//Define que o template é pages/landing.tpl
 		$this->set_template("pages/landing");
+		/*Renderiza o template utilizando o método render da classe PublicControler, definida em
+		scopes/public/publicController. Confere ali =)*/
 		$this->render($this->get_content());
 	}
 	function send()

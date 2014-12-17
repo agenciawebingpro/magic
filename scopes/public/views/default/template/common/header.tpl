@@ -1,3 +1,4 @@
+<!-- Insira aqui o código do analytics -->
 <header class='main'>
 	<div class="container">
 		<div class="logo">
