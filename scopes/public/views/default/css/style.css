@@ -1,0 +1,139 @@
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600);
+
+/* Geral */
+	body {font-family: "Source Sans Pro"; color: #000;}
+	.loading-holder {  display: none;background: #f26122; height: 80px; position: fixed; top: 0; left: 0; width: 100%; z-index: 99;
+		.loading {position: fixed; width: 300px; left:-150px; height: 40px; line-height: 40px; margin-left: 50%; top:20px; background: #fff; .box-shadow(0 1px 5px rgba(0,0,0,0.2)); padding:0px 30px; text-align: center; z-index: 99; font-size: 20px; .box-shadow(0 1px 6px rgba(0,0,0,0.3))}
+	}
+	
+	#all-site {padding-bottom: 90px;}
+	/* Classes Padrões */
+		.container {width:940px; margin:0 auto;} 
+		.container:after{content:""; display: block; clear:both;}
+		.clear:after{content:""; display: block; clear:both;}
+	/* Header */
+		header.main {width:100%;  padding:21px 0 25px;height: 93px; background: #f26122; color: #fff;
+			.logo {.grid4;
+				img {max-width: 100%;}
+			}
+			.telefone {float: right; display: block; font-weight: 700; font-size: 30px; margin-top: 12px; color: #fff; text-decoration: none; line-height: 30px;
+				&:before {display:block; content:""; .size(31px, 37px); background: url(css_path/img/celular.png); float:left; margin-top:-7px;}
+			}
+
+			
+		}
+	/* Footer */
+		footer.main {width: 100%; height: 67px; position: absolute; bottom: 0px; left:0; background-color: #F26122; color: #fff;
+			p {.fleft; font-size: 16px;margin-top:25px;}
+			.developer {.fright;width: 181px; height: 23px; background: url(css_path/img/feito-com-amor.png); margin-top:25px;}
+		}
+	/* Breadcrumb */
+		.breadcrumb { padding:10px 0;
+
+		}
+	/* Lightbox */
+		.lightbox {position: fixed; z-index: 9; top:0; left: 0; height: 100%; width: 100%; background: rgba(0,0,0,0.8); text-align: center; display: none;
+			.close {position: absolute; top:-15px; right: -15px;text-align: center; line-height: 28px; .box-shadow(0 1px 6px rgba(0,0,0,0.3)); background:#F26122; color: #fff; font-weight: 600; color:#fff; height: 30px; width: 30px; display: block; cursor: pointer;}
+			.foto-holder{padding:20px; background: #fff; .box-shadow(~"0 1px 6px rgba(0,0,0,.25)"); display: inline-block; margin-top:20px; max-width: 90%; max-height: 90%; position: relative; text-align: center;
+				img {max-width: 100%; max-height: calc(~"100% - 40px"); display:inline-block;}
+				.legenda {font-size: 14px; padding: 3px; background: #fff;}
+			}
+		}
+	/* Modal */
+		.modal {position: fixed; z-index: 99; top:0; left: 0; width: 100%; height: 100%; background:rgba(0,0,0,0.8); visibility: hidden; opacity: 0; transition:visibility 0.5s, opacity 0.5s;
+			> div {width:500px; left: -250px; margin-left: 50%; top:60px; position: absolute; background: #f5f5f5; .box-shadow(0 1px 6px rgba(0,0,0,0.3)); transition: all 0.3s;
+				.titulo {width: 100%; padding:30px; background: #f26122; font-size: 32px; text-align: center; display: block; color: #fff; font-family: "Source Sans Pro"; font-weight: 200 !important; }
+				.conteudo {padding:20px;
+					p {margin-bottom: 10px; font-size: 16px; line-height: 1.4em;}
+				}
+				ul.botoes {width: 100%;
+					li {width: 100%; margin-bottom: 10px;
+						@corBotao: #E8DB95;
+						a,button {border: none; padding: 0 40px; height: 80px; display: inline-block; text-decoration: none; letter-spacing: 1px; font-weight: 700; outline: none; position: relative; background: @corBotao; color: #736C4A; box-shadow: 0 6px spin(@corBotao,-10); -webkit-transition: none; -moz-transition: none; transition: none; margin-top:15px; .border-radius(5px); width: 100%; line-height: 80px; cursor: pointer; font-size: 16px; text-align: left;
+							&:hover {box-shadow: 0 4px spin(@corBotao,-20);top: 2px;}
+						}
+					}
+				}
+			}
+			&.visible {visibility:visible; opacity:1;
+				> div {top:20px;}
+			}
+
+		}
+
+/* Páginas */ 
+	/* Home */
+		section.landing-page {
+			.banner {position: relative; text-align: center;
+				.fundo {height: 342px; width: 100%; position: absolute; top:0; left: 0; }
+				img {display: inline-block; position: relative;}
+			}
+			.conteudo {margin-top:-60px;position: relative;
+				h1,h2 {font-size: 48px;font-weight: 600; letter-spacing: -0.06em}
+				h2 {font-size:32px;}
+				.vantagens-depoimentos {.grid8;
+					ul.vantagens li {.grid4; .margin-l; float: left; margin-top:33px; margin-bottom: 17px;
+						&:nth-child(2n+1){margin-left:0;}
+						.icone{ text-align: center; margin-bottom: 25px;}
+						p { color: #1F1F1F;font-size: 18px;font-weight: 400; line-height: 1.3em; margin-top:10px; letter-spacing: -0.05em; word-spacing: 0.05em;}
+					}
+					.depoimentos {margin-top: 39px;
+						.cliente { margin-top:32px;
+							img {float: left; .grid2; .margin-r;}
+							.info {float: left;  .grid6;
+								&.sem-foto {.grid8;}
+								.nome,.cargo,.depoimento {width:100%; display: block; float: left;}
+								.nome {color: #F26122;font-size: 28px;font-weight: 600;	 margin-top:10px;}
+								.cargo {color: #000;font-size: 16px;font-weight: 400; line-height: 1.3em; margin:3px 0 9px;}
+								.depoimento {color: #1F1F1F;font-size: 18px;font-weight: 400; line-height: 1.2em}
+
+							}
+						}
+						.imagens {width:100%; margin-top:10px;
+							img {.grid4; margin-top:20px; cursor: pointer;
+								&:nth-child(2n){.margin-l}
+							}
+						}
+					}
+				}
+				.form {.grid4; padding:30px 22px 30px 22px;background-color: #F26122; color: #fff;position: absolute; right: 0; top:0; .transition(all 0.6s);
+					h2 {position: relative; padding-left: 26px; font-size: 32px;}
+					p {font-size: 18px;font-weight: 400; line-height: 1.3em; margin:9px 0 19px;}
+					h2:before {content:""; display: block; .size(22px, 16px); background: url(css_path/img/seta.png); position: absolute;left:0; top:8px;}
+					input,textarea {padding:16px 13px; background: #fff; width: 100%; min-width: 100%; max-width: 100%; font-size: 15px; color: #666; border:none; margin-top:10px; font-family: "Arial"; font-weight: 400;
+						&.error {background: #333; color:#fff; border: 1px solid #fff}
+					}
+					button {background: #fff; .box-shadow(0 2px 0 rgba(100, 35, 7, 0.65));padding:31px 21px; margin-top:10px; border:none; cursor: pointer; width:100%;
+						em {color: #F16122;font-size: 26px;font-weight: 600; letter-spacing: -0.05em; width: 100%; font-family: "Source Sans Pro";}
+						p {color: #1F1F1F;font-size: 16px;font-weight: 400; width: 100%; margin-top:5px; }
+					}
+					&.fixed {margin-right:50%; position: fixed; right: -470px;}
+				}
+			}
+			
+		}
+
+/* Smartphones ----------- */
+	@media only screen and (max-device-width : 768px) {
+		
+	}
+
+/* Tablets ----------- */
+	@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+
+	}
+
+/* Telas acima de 1224px ----------- */
+	@media only screen and (min-width : 1224px) {
+
+	}
+
+/* Telas Maiores ----------- */
+	@media only screen and (min-width : 1824px) {
+
+	}
+
+/* Retina ----------- */
+	@media only screen and (-webkit-min-device-pixel-ratio : 1.5), only screen and (min-device-pixel-ratio : 1.5) {
+
+	}

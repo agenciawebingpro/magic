@@ -8,7 +8,7 @@ s/*TESTE RESET*/
 	
 	/* Universal */
 
-	 *,*:after,*:before{
+	 *{
 	 	-webkit-box-sizing: border-box;
 	 	-moz-box-sizing: border-box;
 	 	box-sizing: border-box;
@@ -112,7 +112,7 @@ s/*TESTE RESET*/
 	.container {position: relative;}
 	/* Grid Fluido*/
 		/* t -> tamanho // n -> nÃºmero */
-		@t-totalgrid: 100%;
+		@t-totalgrid: <?php echo $gridWidth; ?>;
 		@t-margingrid: <?php echo $gridMargin;?>;
 		@n-colunasgrid: <?php echo $gridColumns?>;
 		@t-coluna: (@t-totalgrid - ((@n-colunasgrid - 1) * @t-margingrid)) / @n-colunasgrid;

@@ -1,7 +1,8 @@
 <?php
 /* RESPONSIVE CONFIG */
+$gridWidth = "940px";
 $gridColumns = 12; //Number of coluns in grids.
-$gridMargin = '2%';
+$gridMargin = '24px';
 $breakpoints = array( //Defining breakpoints for definig custom grids. gridprefix => info.
 	"xs-"=>array('max'=>"460",'alias'=>'mobile portrait'), 
 	"s-"=>array('min'=>"460",'max'=>'860','alias'=>'mobile landscape'),
